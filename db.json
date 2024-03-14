@@ -1,0 +1,127 @@
+{
+  "users": [
+    {
+      "id": "7b8d15c3-10a4-4e68-b485-3f4c054f5aee",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "123456"
+    }
+  ],
+  "products": [
+    {
+      "id": "e3e9cc22-839e-4774-92b2-90b3275e061",
+      "name": "Camiseta Básica",
+      "description": "Uma camiseta confortável e estilosa para todas as ocasiões. Feita com tecido de algodão de alta qualidade, essa camiseta proporciona conforto durante o uso. Com um design moderno e versátil, ela pode ser combinada com diferentes peças de roupa para criar diversos looks. Adicione essa camiseta de algodão ao seu guarda-roupa e esteja sempre pronto para arrasar.",
+      "price": 30,
+      "imageSrc": [
+        "https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
+        "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
+        "https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-02.jpg"
+      ],
+      "size": ["Tamanho único"],
+      "color": ["Preto", "Branco", "Cinza"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "100% algodão",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Algodão colhido à mão e finalizado com óleos naturais.",
+        "includes": "Adesivos da Z store.",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    },
+    {
+      "id": "e3e9cc22-839e-4774-92b2-90b3275e064",
+      "name": "Bolsa de Cintura Retrô",
+      "description": "A bolsa de cintura retrô é perfeita para quem busca estilo e praticidade. Com design vintage e diversos compartimentos, ela é ideal para carregar seus pertences de forma organizada. Feita com materiais de alta qualidade, essa bolsa é resistente e durável. Adicione um toque retrô ao seu visual com essa incrível bolsa.",
+      "price": 90,
+      "imageSrc": [
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+      ],
+      "size": ["Tamanho único"],
+      "color": ["Salmão", "Rosé", "Azul"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Lixado à mão e finalizado com óleo natural",
+        "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    },
+    {
+      "id": "bcb74cd1-f214-48ef-ad16-f60da3218f11",
+      "name": "Bolsa Média",
+      "description": "A bolsa média é prática e versátil, perfeita para o dia a dia. Com um design moderno e espaçoso, ela permite que você carregue todos os seus itens essenciais com conforto e estilo. Feita com materiais de alta qualidade, essa bolsa é resistente e durável. Adicione um toque de elegância ao seu visual com essa incrível bolsa.",
+      "price": 32,
+      "imageSrc": [
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg"
+      ],
+      "size": ["P", "M"],
+      "color": ["Cor única"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Lixado à mão e finalizado com óleo natural",
+        "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    },
+    {
+      "id": "a3e9cc21-839e-4774-92b2-90b32d75e064",
+      "name": "Garrafa de Barro",
+      "description": "A garrafa de barro é perfeita para quem busca uma opção sustentável e estilosa para transportar líquidos. Feita com argila natural, essa garrafa mantém a temperatura da bebida por mais tempo e ainda preserva o sabor original. Com um design único e artesanal, essa garrafa é uma ótima escolha para quem valoriza a natureza e o estilo.",
+      "price": 48,
+      "imageSrc": [
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+      ],
+      "size": ["Tamanho único"],
+      "color": ["Cor única"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Lixado à mão e finalizado com óleo natural",
+        "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    },
+    {
+      "id": "a3e9cc22-839e-4774-92b2-90b32d75e064",
+      "name": "Caneca Nômade",
+      "description": "A caneca nômade é perfeita para quem gosta de tomar sua bebida favorita em qualquer lugar. Com um design prático e resistente, ela é ideal para viagens, acampamentos e passeios ao ar livre. Feita com materiais de alta qualidade, essa caneca mantém a temperatura da bebida por mais tempo. Leve sua caneca nômade para onde quiser e aproveite sua bebida preferida a qualquer momento.",
+      "price": 35,
+      "imageSrc": [
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
+        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+      ],
+      "size": ["Tamanho único"],
+      "color": ["Branco", "Verde oliva", "Cinza"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Lixado à mão e finalizado com óleo natural",
+        "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    }
+  ]
+}
