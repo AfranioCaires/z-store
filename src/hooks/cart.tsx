@@ -1,21 +1,32 @@
 import { Product } from "@/interfaces/product";
+
 import { client } from "@/network/api";
 import { createContext, useState, ReactNode } from "react";
-
 interface CartItem {
   id: string;
   quantity: number;
 }
 
-export const CartContext = createContext({
-  items: [] as CartItem[],
-  getProductQuantity: () => {},
+interface CartContextValue {
+  items: CartItem[];
+  getProductQuantity: (id: string) => number;
+  addOneToCart: (id: string) => void;
+  removeOneFromCart: (id: string) => void;
+  deleteFromCart: (id: string) => void;
+  getTotalCost: () => number;
+}
+
+export const CartContext = createContext<CartContextValue>({
+  items: [],
+  getProductQuantity: () => 0,
   addOneToCart: () => {},
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
-  getTotalCost: () => {},
+  getTotalCost: () => 0,
 });
 
+const { data } = await client.get<Product[]>(`/products/`);
+console.log(data);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartProducts, setCartProducts] = useState<CartItem[]>([]);
 
@@ -40,10 +51,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         },
       ]);
     } else {
-      cartProducts.map((product) =>
-        product.id === id
-          ? { ...product, quantity: product.quantity + 1 }
-          : product
+      setCartProducts(
+        cartProducts.map((product) =>
+          product.id === id
+            ? { ...product, quantity: product.quantity + 1 }
+            : product
+        )
       );
     }
   }
@@ -69,15 +82,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  async function getTotalCost() {
+  function getTotalCost() {
     let totalCost = 0;
-    await Promise.all(
-      cartProducts.map(async (cartItem) => {
-        const { data } = await client.get<Product>(`/products/${cartItem.id}`);
-        const productData = data;
-        totalCost += productData.price * cartItem.quantity;
-      })
-    );
+
+    cartProducts.map((cartItem) => {
+      const filtered = data.find((productInData) => {
+        return productInData.id == cartItem.id;
+      });
+      console.log(filtered);
+      if (filtered) {
+        totalCost += filtered.price * cartItem.quantity;
+      }
+    });
     return totalCost;
   }
 

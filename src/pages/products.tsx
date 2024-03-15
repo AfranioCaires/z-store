@@ -63,42 +63,47 @@ export default function Products() {
                 </h1>
 
                 <div className="space-y-3">
-                  <div>
-                    <Label>Escolha uma cor</Label>
-                    <Select>
-                      <SelectTrigger className="">
-                        <SelectValue placeholder="Cor" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel>Cores</SelectLabel>
-                          {productData.color.map((color) => (
-                            <SelectItem key={color} value={color}>
-                              {color}
-                            </SelectItem>
-                          ))}
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                  <p className="mt-4 text-gray-500 leading-relaxed">
+                    {productData.description}
+                  </p>
+                  <div className="mt-10 space-y-3">
+                    <div>
+                      <Label>Escolha uma cor</Label>
+                      <Select>
+                        <SelectTrigger className="">
+                          <SelectValue placeholder="Cor" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectGroup>
+                            <SelectLabel>Cores</SelectLabel>
+                            {productData.color.map((color) => (
+                              <SelectItem key={color} value={color}>
+                                {color}
+                              </SelectItem>
+                            ))}
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
 
-                  <div>
-                    <Label>Escolha um tamanho</Label>
-                    <Select>
-                      <SelectTrigger className="">
-                        <SelectValue placeholder="Tamanho" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel>Tamanhos</SelectLabel>
-                          {productData.size.map((size) => (
-                            <SelectItem key={size} value={size}>
-                              {size}
-                            </SelectItem>
-                          ))}
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
+                    <div>
+                      <Label>Escolha um tamanho</Label>
+                      <Select>
+                        <SelectTrigger className="">
+                          <SelectValue placeholder="Tamanho" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectGroup>
+                            <SelectLabel>Tamanhos</SelectLabel>
+                            {productData.size.map((size) => (
+                              <SelectItem key={size} value={size}>
+                                {size}
+                              </SelectItem>
+                            ))}
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
                 </div>
 
@@ -111,8 +116,8 @@ export default function Products() {
 
                   <Button
                     onClick={() => {
-                      cart.addOneToCart(productId);
-                      console.log(cart.items);
+                      cart.addOneToCart(productId!);
+                      console.log(cart);
                     }}
                   >
                     Adicionar ao carrinho
@@ -128,9 +133,6 @@ export default function Products() {
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   Detalhes do produto
                 </h2>
-                <p className="mt-4 text-gray-500 leading-relaxed">
-                  {productData.description}
-                </p>
 
                 <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                   <div className="border-t border-gray-200 pt-4">
