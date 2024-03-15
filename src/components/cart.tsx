@@ -69,7 +69,7 @@ export function Cart() {
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">
                             <p className="text-muted-foreground">
-                              Quantidade: {cart.getProductQuantity(product.id)}{" "}
+                              Quantidade: {cart.getProductQuantity(product.id)}
                             </p>
                             <div className="flex">
                               <button

@@ -17,11 +17,11 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import Error from "./error";
 import { CartContext } from "@/hooks/cart";
+import { toast } from "sonner";
 
 export default function Products() {
   const { productId } = useParams<{ productId: string }>();
   const [productData, setProduct] = useState<Product>();
-
   async function loadProduct() {
     if (productData) {
       return;
@@ -117,7 +117,7 @@ export default function Products() {
                   <Button
                     onClick={() => {
                       cart.addOneToCart(productId!);
-                      console.log(cart);
+                      toast.success("Item adicionado com sucesso!");
                     }}
                   >
                     Adicionar ao carrinho
