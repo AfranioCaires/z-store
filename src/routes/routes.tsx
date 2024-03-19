@@ -3,6 +3,9 @@ import { Home } from "@/pages/home";
 import Products from "@/pages/products";
 import { Root } from "@/pages/root";
 import { createBrowserRouter } from "react-router-dom";
+import PrivateRoute from "./private-route";
+import { Checkout } from "@/pages/checkout";
+import { SignIn } from "@/pages/signIn";
 
 const router = createBrowserRouter([
   {
@@ -17,21 +20,21 @@ const router = createBrowserRouter([
         path: "/products/:productId",
         element: <Products />,
       },
+      {
+        path: "/signin",
+        element: <SignIn />,
+      },
+      {
+        path: "/checkout",
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
+      },
     ],
     errorElement: <Error />,
   },
-  // {
-  //   path: "/signin",
-  //   element: <SignIn />,
-  // },
-  // {
-  //   path: "/users",
-  //   element: (
-  //     <PrivateRoute>
-  //       <Users />
-  //     </PrivateRoute>
-  //   ),
-  // },
 ]);
 
 export default router;

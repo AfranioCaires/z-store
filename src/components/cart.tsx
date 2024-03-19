@@ -46,59 +46,82 @@ export function Cart() {
           </SheetHeader>
           <ScrollArea className="h-[70vh]">
             <div className="grid gap-4 py-4">
+              <Separator />
+
               <div className="mt-8">
                 <div className="flow-root">
-                  <ul className="-my-6 divide-y">
-                    {cartProducts.map((product: Product) => (
-                      <li key={product.id} className="flex pr-6 py-6">
-                        <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border">
-                          <img
-                            src={product.imageSrc[0]}
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
+                  {cart.items.length > 0 ? (
+                    <ul className="-my-6 divide-y">
+                      {cartProducts.map((product: Product) => (
+                        <li key={product.id} className="flex pr-6 py-6">
+                          <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-md border">
+                            <img
+                              src={product.imageSrc[0]}
+                              className="h-full w-full object-cover object-center"
+                            />
+                          </div>
 
-                        <div className="ml-4 flex flex-1 flex-col">
-                          <div>
-                            <div className="flex justify-between text-base font-medium">
-                              <h3>{product.name}</h3>
-                              <p className="text-nowrap ml-4">
-                                R$ {product.price}
-                              </p>
+                          <div className="ml-4 flex flex-1 flex-col">
+                            <div>
+                              <div className="flex justify-between text-base font-medium">
+                                <h3>{product.name}</h3>
+                                <p className="text-nowrap ml-4">
+                                  R$ {product.price}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex flex-1 items-end justify-between text-sm">
+                              <div>
+                                <p className="text-muted-foreground">
+                                  Qtd: {cart.getProductQuantity(product.id)}
+                                </p>
+                                <p className="text-muted-foreground">
+                                  Cor: {cart.getProductData(product.id)?.color}
+                                </p>
+                                <p className="text-muted-foreground">
+                                  Tamanho:{" "}
+                                  {cart.getProductData(product.id)?.size}
+                                </p>
+                              </div>
+
+                              <div className="flex">
+                                <button
+                                  type="button"
+                                  className="font-medium text-primary hover:text-primary/70"
+                                  onClick={() =>
+                                    cart.removeOneFromCart(product.id)
+                                  }
+                                >
+                                  Remover
+                                </button>
+                              </div>
                             </div>
                           </div>
-                          <div className="flex flex-1 items-end justify-between text-sm">
-                            <p className="text-muted-foreground">
-                              Quantidade: {cart.getProductQuantity(product.id)}
-                            </p>
-                            <div className="flex">
-                              <button
-                                type="button"
-                                className="font-medium text-primary hover:text-primary/70"
-                                onClick={() =>
-                                  cart.removeOneFromCart(product.id)
-                                }
-                              >
-                                Remover
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <h1 className="font-medium text-sm text-center text-foreground">
+                      Seu carrinho está vazio.
+                    </h1>
+                  )}
                 </div>
               </div>
-              <Separator />
             </div>
           </ScrollArea>
           <SheetFooter className="absolute bottom-0">
             <div className="space-y-4 justify-self-end">
               <div className="flex justify-between items-center font-medium">
-                <p className="text-sm">Subtotal</p>
-                <p>R$ {cart.getTotalCost()}</p>
+                {cart.getTotalCost() > 0 && (
+                  <>
+                    <p className="text-sm">Subtotal</p>
+                    <p>R$ {cart.getTotalCost()}</p>
+                  </>
+                )}
               </div>
-              <Button className="w-full">Fazer checkout</Button>
+              <Button disabled={cart.items.length === 0} className="w-full">
+                Fazer checkout
+              </Button>
               <SheetClose asChild>
                 <Button className="w-full" variant={"link"}>
                   Continuar comprando <ArrowRight className="size-4 ml-2" />

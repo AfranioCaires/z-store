@@ -19,6 +19,19 @@ import Error from "./error";
 import { CartContext } from "@/hooks/cart";
 import { toast } from "sonner";
 
+import { Formik, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+interface ProductOptions {
+  size: string;
+  color: string;
+}
+
+const FormSchema = Yup.object({
+  color: Yup.string().required("Selecione uma cor."),
+  size: Yup.string().required("Selecione um tamanho."),
+});
+
 export default function Products() {
   const { productId } = useParams<{ productId: string }>();
   const [productData, setProduct] = useState<Product>();
@@ -36,97 +49,135 @@ export default function Products() {
     loadProduct();
   }, [productId]);
 
+  function onSubmit(values: ProductOptions) {
+    cart.addToCart(productId!, values.color, values.size);
+    toast.success("Item adicionado com sucesso!");
+    console.log(values);
+  }
+
   return (
     <>
       {productData === undefined ? (
         <Error />
       ) : (
         <section className="py-12 sm:py-16">
-          <div className="container mx-auto px-4">
-            <div className="lg:col-gap-12 xl:col-gap-16 items-center mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
-              <div className="lg:col-span-3 lg:row-end-1">
-                <div className="lg:flex lg:items-start">
-                  <div className="lg:order-2 lg:ml-5">
-                    <div className="max-w-xl overflow-hidden border rounded-lg">
-                      <img
-                        className="h-full w-full max-w-full object-cover"
-                        src={productData.imageSrc[0]}
-                      />
+          <Formik
+            initialValues={{
+              color: "",
+              size: "",
+            }}
+            validationSchema={FormSchema}
+            onSubmit={onSubmit}
+          >
+            {({ values, setFieldValue }) => (
+              <Form>
+                <div className="container mx-auto px-4">
+                  <div className="lg:col-gap-12 xl:col-gap-16 items-center mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
+                    <div className="lg:col-span-3 lg:row-end-1">
+                      <div className="lg:flex lg:items-start">
+                        <div className="lg:order-2 lg:ml-5">
+                          <div className="max-w-xl overflow-hidden border rounded-lg">
+                            <img
+                              className="h-full w-full max-w-full object-cover"
+                              src={productData.imageSrc[0]}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
+                      <h1 className="sm: text-2xl font-bold mb-6 sm:text-3xl">
+                        {productData.name}
+                      </h1>
+
+                      <div className="space-y-3">
+                        <p className="mt-4 text-gray-500 leading-relaxed">
+                          {productData.description}
+                        </p>
+                        <div className="mt-10 space-y-3">
+                          <div>
+                            <Label>Escolha uma cor</Label>
+                            <Select
+                              name="color"
+                              onValueChange={(value) =>
+                                setFieldValue("color", value)
+                              }
+                              value={values.color}
+                            >
+                              <SelectTrigger>
+                                <SelectValue placeholder="Cor" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectLabel>Cores</SelectLabel>
+                                  {productData.color.map((color) => (
+                                    <SelectItem key={color} value={color}>
+                                      {color}
+                                    </SelectItem>
+                                  ))}
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                            <ErrorMessage
+                              name="color"
+                              component="div"
+                              className="text-sm font-medium text-primary mt-2"
+                            />
+                          </div>
+
+                          <div>
+                            <Label>Escolha um tamanho</Label>
+                            <Select
+                              name="size"
+                              onValueChange={(value) =>
+                                setFieldValue("size", value)
+                              }
+                              value={values.size}
+                            >
+                              <SelectTrigger className="">
+                                <SelectValue placeholder="Tamanho" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectGroup>
+                                  <SelectLabel>Tamanhos</SelectLabel>
+                                  {productData.size.map((size) => (
+                                    <SelectItem key={size} value={size}>
+                                      {size}
+                                    </SelectItem>
+                                  ))}
+                                </SelectGroup>
+                              </SelectContent>
+                            </Select>
+                            <ErrorMessage
+                              name="size"
+                              component="div"
+                              className="text-sm font-medium text-primary mt-2"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-10 flex flex-col lg:items-center justify-between space-y-4 border-t border-b border-primary-foreground py-4 sm:flex-row sm:space-y-0">
+                        <div className="flex items-end">
+                          <h1 className="text-3xl font-bold">
+                            R$ {productData.price}
+                          </h1>
+                        </div>
+
+                        <Button type="submit">
+                          Adicionar ao carrinho
+                          <ShoppingBag className="size-4 ml-2" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Form>
+            )}
+          </Formik>
 
-              <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
-                <h1 className="sm: text-2xl font-bold mb-6 sm:text-3xl">
-                  {productData.name}
-                </h1>
-
-                <div className="space-y-3">
-                  <p className="mt-4 text-gray-500 leading-relaxed">
-                    {productData.description}
-                  </p>
-                  <div className="mt-10 space-y-3">
-                    <div>
-                      <Label>Escolha uma cor</Label>
-                      <Select>
-                        <SelectTrigger className="">
-                          <SelectValue placeholder="Cor" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <SelectLabel>Cores</SelectLabel>
-                            {productData.color.map((color) => (
-                              <SelectItem key={color} value={color}>
-                                {color}
-                              </SelectItem>
-                            ))}
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div>
-                      <Label>Escolha um tamanho</Label>
-                      <Select>
-                        <SelectTrigger className="">
-                          <SelectValue placeholder="Tamanho" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectGroup>
-                            <SelectLabel>Tamanhos</SelectLabel>
-                            {productData.size.map((size) => (
-                              <SelectItem key={size} value={size}>
-                                {size}
-                              </SelectItem>
-                            ))}
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-10 flex flex-col lg:items-center justify-between space-y-4 border-t border-b border-primary-foreground py-4 sm:flex-row sm:space-y-0">
-                  <div className="flex items-end">
-                    <h1 className="text-3xl font-bold">
-                      R$ {productData.price}
-                    </h1>
-                  </div>
-
-                  <Button
-                    onClick={() => {
-                      cart.addOneToCart(productId!);
-                      toast.success("Item adicionado com sucesso!");
-                    }}
-                  >
-                    Adicionar ao carrinho
-                    <ShoppingBag className="size-4 ml-2" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* SASASDASDASD */}
           <div>
             <div className="mx-auto grid container grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-12 sm:px-6 sm:py-12 lg:grid-cols-2 lg:px-8">
               <div>

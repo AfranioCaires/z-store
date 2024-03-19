@@ -5,28 +5,36 @@ import { createContext, useState, ReactNode } from "react";
 interface CartItem {
   id: string;
   quantity: number;
+  color: string;
+  size: string;
+}
+
+interface cartProduct {
+  color: string;
+  size: string;
 }
 
 interface CartContextValue {
   items: CartItem[];
   getProductQuantity: (id: string) => number;
-  addOneToCart: (id: string) => void;
+  addToCart: (id: string, color: string, size: string) => void;
   removeOneFromCart: (id: string) => void;
   deleteFromCart: (id: string) => void;
   getTotalCost: () => number;
+  getProductData: (id: string) => cartProduct | undefined;
 }
 
 export const CartContext = createContext<CartContextValue>({
   items: [],
   getProductQuantity: () => 0,
-  addOneToCart: () => {},
+  addToCart: () => {},
   removeOneFromCart: () => {},
   deleteFromCart: () => {},
   getTotalCost: () => 0,
+  getProductData: () => undefined,
 });
 
 const { data } = await client.get<Product[]>(`/products/`);
-console.log(data);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartProducts, setCartProducts] = useState<CartItem[]>([]);
 
@@ -40,7 +48,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
     return quantity;
   }
 
-  function addOneToCart(id: string) {
+  function getProductData(
+    id: string
+  ): { color: string; size: string } | undefined {
+    const productData = cartProducts.find((product) => product.id === id);
+    if (productData) {
+      const { color, size } = productData;
+      return { color, size };
+    }
+    return undefined;
+  }
+
+  function addToCart(id: string, color: string, size: string) {
     const quantity = getProductQuantity(id);
     if (quantity === 0) {
       setCartProducts([
@@ -48,6 +67,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         {
           id,
           quantity: 1,
+          color,
+          size,
         },
       ]);
     } else {
@@ -63,7 +84,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   function deleteFromCart(id: string) {
     setCartProducts((cartProducts) =>
-      cartProducts.filter((currentProduct) => currentProduct.id != id)
+      cartProducts.filter((currentProduct) => currentProduct.id !== id)
     );
   }
 
@@ -87,9 +108,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     cartProducts.map((cartItem) => {
       const filtered = data.find((productInData) => {
-        return productInData.id == cartItem.id;
+        return productInData.id === cartItem.id;
       });
-      console.log(filtered);
       if (filtered) {
         totalCost += filtered.price * cartItem.quantity;
       }
@@ -100,10 +120,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const contextValue = {
     items: cartProducts,
     getProductQuantity,
-    addOneToCart,
+    addToCart,
     removeOneFromCart,
     deleteFromCart,
     getTotalCost,
+    getProductData,
   };
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
