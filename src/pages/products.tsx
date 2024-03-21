@@ -52,7 +52,6 @@ export default function Products() {
   function onSubmit(values: ProductOptions) {
     cart.addToCart(productId!, values.color, values.size);
     toast.success("Item adicionado com sucesso!");
-    console.log(values);
   }
 
   return (
@@ -177,7 +176,6 @@ export default function Products() {
             )}
           </Formik>
 
-          {/* SASASDASDASD */}
           <div>
             <div className="mx-auto grid container grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-12 sm:px-6 sm:py-12 lg:grid-cols-2 lg:px-8">
               <div>

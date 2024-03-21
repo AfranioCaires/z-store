@@ -13,7 +13,7 @@ import { useAuth } from "@/hooks/auth";
 import { Link } from "react-router-dom";
 
 export function Profile() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
 
   return (
     <DropdownMenu>
@@ -46,7 +46,10 @@ export function Profile() {
           <>
             <DropdownMenuItem>Perfil</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="flex items-center">
+            <DropdownMenuItem
+              onClick={() => signOut()}
+              className="flex items-center"
+            >
               <LogOut className="size-4 mr-2" />
               Log-out
             </DropdownMenuItem>

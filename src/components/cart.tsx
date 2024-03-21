@@ -17,6 +17,7 @@ import { Product } from "../interfaces/product";
 import { ScrollArea } from "./ui/scroll-area";
 import { CartContext } from "@/hooks/cart";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 const response = await client.get<Product[]>("products");
 const products = response.data;
 
@@ -111,7 +112,7 @@ export function Cart() {
           </ScrollArea>
           <SheetFooter className="absolute bottom-0">
             <div className="space-y-4 justify-self-end">
-              <div className="flex justify-between items-center font-medium">
+              <div className="flex my-4 justify-between items-center font-medium">
                 {cart.getTotalCost() > 0 && (
                   <>
                     <p className="text-sm">Subtotal</p>
@@ -119,9 +120,11 @@ export function Cart() {
                   </>
                 )}
               </div>
-              <Button disabled={cart.items.length === 0} className="w-full">
-                Fazer checkout
-              </Button>
+              <Link to="/checkout">
+                <Button disabled={cart.items.length === 0} className="w-full">
+                  Fazer checkout
+                </Button>
+              </Link>
               <SheetClose asChild>
                 <Button className="w-full" variant={"link"}>
                   Continuar comprando <ArrowRight className="size-4 ml-2" />
