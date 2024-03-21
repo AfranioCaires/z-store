@@ -1,3 +1,11 @@
 export function Checkout() {
-  return <h1> Checkout </h1>;
+  return (
+    <>
+    <div className="container grid grid-cols-2 gap-10 ">
+      <div className="">
+        
+      </div>
+    </div>
+    </>
+  );
 }

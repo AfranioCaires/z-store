@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { LogIn, LogOut, User, UserRoundPlus } from "lucide-react";
+import { LogIn, LogOut, User, UserRoundPlus, SquareUser } from "lucide-react";
 import { Button } from "./ui/button";
 import { useAuth } from "@/hooks/auth";
 import { Link } from "react-router-dom";
@@ -44,7 +44,7 @@ export function Profile() {
         )}
         {user && (
           <>
-            <DropdownMenuItem>Perfil</DropdownMenuItem>
+            <DropdownMenuItem><SquareUser className="size-4 mr-2" /> Perfil</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => signOut()}

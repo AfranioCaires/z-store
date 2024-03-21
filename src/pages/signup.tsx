@@ -7,22 +7,16 @@ import { FormikProvider, useFormik } from "formik";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/auth";
 import * as Yup from "yup";
-
-interface UserSignUp {
-  name: string;
-  email: string;
-  password: string;
-  bithDate: string;
-  street: string;
-  number: string;
-  country: string;
-  zipcode: string;
-  neighborhood: string;
-}
+import {UserSignUp} from "@/interfaces/userSignUp";
 
 const validationSchema = Yup.object({
   email: Yup.string().required("Digite o seu email.").email(),
   password: Yup.string().required("Digite sua senha."),
+  birthDate: Yup.date().required("Digite a sua data de nascimento."),
+  street: Yup.string().min(5 ,"A rua deve conter no mínimo 5 caracteres").required("Digite a rua."),
+  zipcode: Yup.string().min(3 ,"O país deve conter no mínimo 3 caracteres").required("Digite o país."),
+  neighborhood: Yup.string().min(5 ,"O bairro deve conter no mínimo 5 caracteres").required("Digite o bairro."),
+  
 });
 
 export function SignUp() {
@@ -34,6 +28,14 @@ export function SignUp() {
     initialValues: {
       email: "",
       password: "",
+      birthDate: "",
+      street: "",
+      number: "",
+      country: "",
+      zipcode: "",
+      neighborhood: "",
+      name: ""
+
     },
     validationSchema,
     onSubmit: async (values, { setFieldError }) => {
@@ -49,7 +51,6 @@ export function SignUp() {
   });
   return (
     <>
-      {/* min-h-screen */}
 
       <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="md:mx-auto w- md:w-full md:max-w-md">
@@ -107,14 +108,13 @@ export function SignUp() {
               </div>
 
               <div>
-                <Label htmlFor="date">Data de nascimento</Label>
+                <Label htmlFor="birthDate">Data de nascimento</Label>
                 <div className="mt-2">
                   <Input
-                    id="state"
-                    name="state"
+                    id="birthDate"
+                    name="birthDate"
                     type="text"
                     placeholder="Digite seu estado"
-                    autoComplete="adress"
                     className="w-full"
                   />
                 </div>
@@ -122,14 +122,13 @@ export function SignUp() {
 
               <div className="flex flex-col md:flex-row md:items-start md:justify-between md:space-x-2">
                 <div className="w-full md:w-1/2">
-                  <Label htmlFor="state">Rua</Label>
+                  <Label htmlFor="street">Rua</Label>
                   <div className="mt-2">
                     <Input
                       id="street"
                       name="street"
                       type="text"
                       placeholder="Digite sua rua"
-                      autoComplete="street-address"
                       className="w-full"
                     />
                   </div>
@@ -152,7 +151,7 @@ export function SignUp() {
               </div>
 
               <div>
-                <Label htmlFor="date">Bairro</Label>
+                <Label htmlFor="neighborhood">Bairro</Label>
                 <div className="mt-2">
                   <Input
                     id="neighborhood"
@@ -166,7 +165,7 @@ export function SignUp() {
 
               <div className="flex flex-col md:flex-row md:items-start md:justify-between md:space-x-2">
                 <div className="w-full md:w-1/2">
-                  <Label htmlFor="state">País</Label>
+                  <Label htmlFor="country">País</Label>
                   <div className="mt-2">
                     <Input
                       id="country"
@@ -180,7 +179,7 @@ export function SignUp() {
 
                 <div className="w-full md:w-1/2 mt-4 md:mt-0">
                   <div>
-                    <Label htmlFor="number">Código postal</Label>
+                    <Label htmlFor="zipcode">Código postal</Label>
                   </div>
                   <div className="mt-2">
                     <Input

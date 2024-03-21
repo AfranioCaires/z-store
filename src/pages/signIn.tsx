@@ -7,11 +7,7 @@ import { FormikProvider, useFormik } from "formik";
 import { toast } from "sonner";
 import * as Yup from "yup";
 import { useAuth } from "@/hooks/auth";
-
-interface UserSignIn {
-  email: string;
-  password: string;
-}
+import {UserSignIn} from "@/interfaces/userLogin"
 
 const validationSchema = Yup.object({
   email: Yup.string().required("Digite o seu email.").email(),
