@@ -17,12 +17,13 @@ import { Product } from "../interfaces/product";
 import { ScrollArea } from "./ui/scroll-area";
 import { CartContext } from "@/hooks/cart";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const response = await client.get<Product[]>("products");
 const products = response.data;
 
 export function Cart() {
   const cart = useContext(CartContext);
+  const navigate = useNavigate();
   const cartProducts = products.filter((product) =>
     cart.items.some((item) => item.id === product.id)
   );
@@ -120,11 +121,13 @@ export function Cart() {
                   </>
                 )}
               </div>
-              <Link to="/checkout">
-                <Button disabled={cart.items.length === 0} className="w-full">
-                  Fazer checkout
-                </Button>
-              </Link>
+              <Button
+                onClick={() => navigate("/checkout")}
+                disabled={cart.items.length === 0}
+                className="w-full"
+              >
+                Fazer checkout
+              </Button>
               <SheetClose asChild>
                 <Button className="w-full" variant={"link"}>
                   Continuar comprando <ArrowRight className="size-4 ml-2" />
