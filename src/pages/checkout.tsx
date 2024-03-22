@@ -57,6 +57,10 @@ export function Checkout() {
       };
       console.log(order);
       navigate("/");
+      cart.items.forEach((item) => {
+        cart.deleteFromCart(item.id);
+      });
+
       toast.success("Pedido realizado com sucesso!");
     },
   });
