@@ -7,16 +7,17 @@ import {
 } from "react";
 import { User } from "@/interfaces/user";
 import { client } from "@/network/api";
+import { UserSignUp } from "@/interfaces/userSignUp";
 
 interface AuthCredentials {
   email: string;
   password: string;
 }
-
 interface AuthContextData {
   user: User | null;
   signIn(credentials: AuthCredentials): void;
   signOut(): void;
+  signUp(data: UserSignUp): Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -53,13 +54,21 @@ export default function AuthProvider({
     setUser(null);
   }, []);
 
+  const signUp = useCallback(async (data: UserSignUp) => {
+    const response = await client.post<User>("users", data);
+
+    localStorage.setItem("user", JSON.stringify(response.data));
+    setUser(response.data);
+  }, []);
+
   const providerData = useMemo(() => {
     return {
       user,
       signIn,
       signOut,
+      signUp,
     };
-  }, [user, signIn, signOut]);
+  }, [user, signIn, signOut, signUp]);
 
   return (
     <AuthContext.Provider value={providerData}>{children}</AuthContext.Provider>

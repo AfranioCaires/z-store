@@ -7,22 +7,45 @@ import { FormikProvider, useFormik } from "formik";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/auth";
 import * as Yup from "yup";
-import {UserSignUp} from "@/interfaces/userSignUp";
+import { UserSignUp } from "@/interfaces/userSignUp";
 
 const validationSchema = Yup.object({
-  email: Yup.string().required("Digite o seu email.").email(),
-  password: Yup.string().required("Digite sua senha."),
+  name: Yup.string()
+    .required("Digite seu nome.")
+    .min(10, "O nome completo deve conter no mínimo 10 caracteres.")
+    .max(50, "O nome completo deve ter no máximo 50 caracteres."),
+  email: Yup.string()
+    .required("Digite o seu email.")
+    .email()
+    .max(50, "O email deve conter no máximo 50 caracteres."),
+  password: Yup.string()
+    .required("Digite sua senha.")
+    .min(8, "A senha deve conter no mínimo 8 caracteres.")
+    .max(50, "A senha deve ter no máximo 50 caracteres."),
   birthDate: Yup.date().required("Digite a sua data de nascimento."),
-  street: Yup.string().min(5 ,"A rua deve conter no mínimo 5 caracteres").required("Digite a rua."),
-  zipcode: Yup.string().min(3 ,"O país deve conter no mínimo 3 caracteres").required("Digite o país."),
-  neighborhood: Yup.string().min(5 ,"O bairro deve conter no mínimo 5 caracteres").required("Digite o bairro."),
-  
+  street: Yup.string()
+    .min(5, "A rua deve conter no mínimo 5 caracteres")
+    .required("Digite a rua."),
+  zipcode: Yup.string()
+    .matches(/^[0-9]{8}$/, "O CEP deve conter 8 números")
+    .required("Digite o CEP.")
+    .typeError("Digite somente números."),
+  neighborhood: Yup.string()
+    .min(5, "O bairro deve conter no mínimo 5 caracteres")
+    .required("Digite o bairro."),
+  country: Yup.string()
+    .min(5, "O país deve conter no mínimo 5 caracteres")
+    .required("Digite o país."),
+  number: Yup.string()
+    .min(1, "O número deve conter pelo menos 1 caractere")
+    .max(4, "O número deve conter no máximo 4 caracteres")
+    .required("Digite o número da sua casa."),
 });
 
 export function SignUp() {
   const navigate = useNavigate();
 
-  const { signIn } = useAuth();
+  const { signUp } = useAuth();
 
   const form = useFormik<UserSignUp>({
     initialValues: {
@@ -34,15 +57,14 @@ export function SignUp() {
       country: "",
       zipcode: "",
       neighborhood: "",
-      name: ""
-
+      name: "",
     },
     validationSchema,
     onSubmit: async (values, { setFieldError }) => {
       try {
-        await signIn(values);
+        await signUp(values);
         navigate("/");
-        toast.success("Login realizado com sucesso!");
+        toast.success("Cadastro realizado com sucesso!");
       } catch (ex) {
         alert(ex);
         setFieldError("password", "Usuário inválido");
@@ -51,7 +73,6 @@ export function SignUp() {
   });
   return (
     <>
-
       <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="md:mx-auto w- md:w-full md:max-w-md">
           <Zap className="h-10 w-10 text-primary mx-auto" />
@@ -62,7 +83,7 @@ export function SignUp() {
 
         <div className="mt-10 md:mx-auto md:w-full md:max-w-md">
           <FormikProvider value={form}>
-            <form className="space-y-6">
+            <div className="space-y-6">
               <div>
                 <Label htmlFor="name">Nome completo</Label>
                 <div className="mt-2">
@@ -194,16 +215,20 @@ export function SignUp() {
               </div>
 
               <div>
-                <Button type="submit" className="flex w-full justify-center">
+                <Button
+                  type="submit"
+                  onClick={form.submitForm}
+                  className="flex w-full justify-center"
+                >
                   Criar conta
                 </Button>
               </div>
-            </form>
+            </div>
           </FormikProvider>
 
           <p className="mt-10 text-center text-sm text-muted-foreground">
             Já possui uma conta?{" "}
-            <Link to="/login" className="font-semibold text-primary">
+            <Link to="/signin" className="font-semibold text-primary">
               Fazer login
             </Link>
           </p>

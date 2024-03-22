@@ -3,11 +3,10 @@ export interface User {
   name: string;
   email: string;
   password: string;
-  address: {
-    street: string;
-    city: string;
-    state: string;
-    country: string;
-    postalCode: string;
-  };
+  birthDate: string;
+  street: string;
+  number: string;
+  country: string;
+  zipcode: string;
+  neighborhood: string;
 }
