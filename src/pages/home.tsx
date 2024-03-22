@@ -9,7 +9,7 @@ export function Home() {
       <main className="mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="flex items-baseline justify-between border-b border-primary-foreground pb-6 pt-24">
           <h1 className="text-4xl font-bold tracking-tight">
-            Novas tendências <span className="text-primary">.</span>
+            Catálogo de produtos <span className="text-primary">.</span>
           </h1>
         </div>
         <div>

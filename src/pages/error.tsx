@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 export default function Error() {
   const navigate = useNavigate();
@@ -35,10 +34,6 @@ export default function Error() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button onClick={() => navigate("/")}>Página inicial</Button>
-            <Button variant={"ghost"}>
-              Buscar ajuda <span aria-hidden="true"></span>
-              <ArrowRight className="size-4 ml-2" />
-            </Button>
           </div>
         </div>
       </main>

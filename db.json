@@ -1,10 +1,16 @@
 {
   "users": [
     {
-      "id": "7b8d15c3-10a4-4e68-b485-3f4c054f5aee",
-      "name": "Alice Johnson",
-      "email": "alice.johnson@example.com",
-      "password": "123456"
+      "id": "ba51",
+      "email": "teste@teste.com",
+      "password": "12345678",
+      "birthDate": "08/02/2001",
+      "street": "rua teste",
+      "number": "21",
+      "country": "Brasil",
+      "zipcode": "12345667",
+      "neighborhood": "bairro sim",
+      "name": "Teste dos santos"
     }
   ],
   "products": [
@@ -38,10 +44,10 @@
       "price": 90,
       "imageSrc": [
         "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
+        "https://cdn-images.farfetch-contents.com/20/06/58/05/20065805_50321624_1000.jpg",
+        "https://cdn-images.farfetch-contents.com/20/06/63/52/20066352_50325332_1000.jpg",
+        "https://cdn-images.farfetch-contents.com/20/06/63/52/20066352_50325326_1000.jpg",
+        "https://cdn-images.farfetch-contents.com/19/36/98/92/19369892_43243905_1000.jpg"
       ],
       "size": ["Tamanho único"],
       "color": ["Salmão", "Rosé", "Azul"],
@@ -61,10 +67,10 @@
       "price": 32,
       "imageSrc": [
         "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg"
+        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_7.jpg",
+        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_6.jpg",
+        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_5.jpg",
+        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_8.jpg"
       ],
       "size": ["P", "M"],
       "color": ["Cor única"],
@@ -84,10 +90,10 @@
       "price": 48,
       "imageSrc": [
         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+        "https://cdn.boobam.com.br/imgs/cb92f894-c699-6f41-46c9-9e7b071e3b9b_img_md.jpg?v=1671483287",
+        "https://cdn.boobam.com.br/imgs/dcdbd63e-8804-55da-dbeb-a9e0684e5b0b_img_md.jpg?v=1671483287",
+        "https://cdn.boobam.com.br/imgs/be853c76-7961-438f-077e-f3f5064bf3ef_img_md.jpg?v=1670870868",
+        "https://cdn.boobam.com.br/imgs/5d43b888-1e6b-f5cd-3d79-86ad7320e2bf_img_md.jpg?v=1670870867"
       ],
       "size": ["Tamanho único"],
       "color": ["Cor única"],
@@ -107,10 +113,10 @@
       "price": 35,
       "imageSrc": [
         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+        "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-350ml-coyote-flask-1_grande.jpg?v=1682000278",
+        "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-350ml-coyote-flask-5_grande.jpg?v=1682000278",
+        "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-flask-khaki-350ml-4_3cb78c58-8748-44ab-9ee6-621a37359d36_grande.jpg?v=1619179929",
+        "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-flask-khaki-350ml-3_e28f5c59-46da-4ada-97f0-6772ccd742ae_grande.jpg?v=1619179929"
       ],
       "size": ["Tamanho único"],
       "color": ["Branco", "Verde oliva", "Cinza"],
@@ -120,6 +126,76 @@
         "dimensions": "6,25\" x 3,55\" x 1,15\"",
         "finish": "Lixado à mão e finalizado com óleo natural",
         "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    },
+    {
+      "id": "e3e9cc22-839e-4774-92b2-90bdfjs75e061",
+      "name": "Casaco algodão",
+      "description": "O casaco Brain Dead Waffle Button Up possui mangas ajustáveis com botões. Possui bolsos duplos no peito com patch de logo Brain Dead em PVC do lado esquerdo.",
+      "price": 90,
+      "imageSrc": [
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-WAFFLE-BUTTON-FRONT-SHIRT---RASPBERRY_SS24_GOODHOOD_-3_1080x.jpg?v=1711043713",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-WAFFLE-BUTTON-FRONT-SHIRT---RASPBERRY_SS24_GOODHOOD_-2-1_1080x.jpg?v=1711043713",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-WAFFLE-BUTTON-FRONT-SHIRT---RASPBERRY_SS24_GOODHOOD_1080x.jpg?v=1711043713",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-WAFFLE-BUTTON-FRONT-SHIRT---RASPBERRY_SS24_GOODHOOD_-1_1080x.jpg?v=1711043713",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-WAFFLE-BUTTON-FRONT-SHIRT---RASPBERRY_SS24_GOODHOOD_-1-1_1080x.jpg?v=1711043713"
+      ],
+      "size": ["P", "M", "G", "GG", "XG", "XXG"],
+      "color": ["Rosa"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "100% algodão",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Algodão colhido à mão e finalizado com óleos naturais.",
+        "includes": "Adesivos da Z store.",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    },
+    {
+      "id": "e3e9cc22-839e-4774-92b2-90bdsfjs75e061",
+      "name": "Bolsa de praia",
+      "description": "Brain Dead de nylon novinho em folha, perfeito com um patch bordado Brain Dead Equipment e bolsos externos com fechamento magnético.",
+      "price": 60,
+      "imageSrc": [
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-X-EQUIPMENT-CINCHED-CHALK-BAG---BONE_SS24_GOODHOOD_1080x.jpg?v=1711043519",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-X-EQUIPMENT-CINCHED-CHALK-BAG---BONE_SS24_GOODHOOD_-1_1080x.jpg?v=1711043519",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-X-EQUIPMENT-CINCHED-CHALK-BAG---BONE_SS24_GOODHOOD_-2_1080x.jpg?v=1711043519",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-X-EQUIPMENT-CINCHED-CHALK-BAG---BONE_SS24_GOODHOOD_-3_1080x.jpg?v=1711043519",
+        "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-X-EQUIPMENT-CINCHED-CHALK-BAG---BONE_SS24_GOODHOOD_-4_1080x.jpg?v=1711043519"
+      ],
+      "size": ["P", "M", "G", "GG", "XG", "XXG"],
+      "color": ["Cor única"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "Poliéster",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Algodão colhido à mão e finalizado com óleos naturais.",
+        "includes": "Adesivos da Z store.",
+        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
+      }
+    },
+
+    {
+      "id": "1b9ddd99-4ab8-4f7e-bS87e-9a7721cf2dbf",
+      "name": "Moletom de Inverno",
+      "description": "Mergulhe no aconchego e no estilo com o Moletom de Inverno. Confeccionado em algodão premium, oferece conforto e visual único com sua estampa e lavagem especial.",
+      "price": 190,
+      "imageSrc": [
+        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_1080x.jpg?v=1710342926",
+        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-1-1_1080x.jpg?v=1710424034",
+        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-1_1080x.jpg?v=1710424034",
+        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-2_1080x.jpg?v=1710424034",
+        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-2-1_1080x.jpg?v=1710424032"
+      ],
+      "size": ["P", "M", "G", "GG", "XG"],
+      "color": ["Preto"],
+      "details": {
+        "origin": "Projetado por Z store, Inc",
+        "material": "Poliéster",
+        "dimensions": "6,25\" x 3,55\" x 1,15\"",
+        "finish": "Algodão colhido à mão e finalizado com óleos naturais.",
+        "includes": "Adesivos da Z store.",
         "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
       }
     }
