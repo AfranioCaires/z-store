@@ -56,35 +56,6 @@
       }
     },
     {
-      "id": "e3e9cc22-839e-4774-92b2-90b3275e064",
-      "name": "Bolsa de Cintura Retrô",
-      "description": "A bolsa de cintura retrô é perfeita para quem busca estilo e praticidade. Com design vintage e diversos compartimentos, ela é ideal para carregar seus pertences de forma organizada. Feita com materiais de alta qualidade, essa bolsa é resistente e durável. Adicione um toque retrô ao seu visual com essa incrível bolsa.",
-      "price": 90,
-      "imageSrc": [
-        "https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-02.jpg",
-        "https://cdn-images.farfetch-contents.com/20/06/58/05/20065805_50321624_1000.jpg",
-        "https://cdn-images.farfetch-contents.com/20/06/63/52/20066352_50325332_1000.jpg",
-        "https://cdn-images.farfetch-contents.com/20/06/63/52/20066352_50325326_1000.jpg",
-        "https://cdn-images.farfetch-contents.com/19/36/98/92/19369892_43243905_1000.jpg"
-      ],
-      "size": [
-        "Tamanho único"
-      ],
-      "color": [
-        "Salmão",
-        "Rosé",
-        "Azul"
-      ],
-      "details": {
-        "origin": "Projetado por Z store, Inc",
-        "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
-        "dimensions": "6,25\" x 3,55\" x 1,15\"",
-        "finish": "Lixado à mão e finalizado com óleo natural",
-        "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
-        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
-      }
-    },
-    {
       "id": "a3e9cc22-839e-4774-92b2-90b32d75e064",
       "name": "Caneca Nômade",
       "description": "A caneca nômade é perfeita para quem gosta de tomar sua bebida favorita em qualquer lugar. Com um design prático e resistente, ela é ideal para viagens, acampamentos e passeios ao ar livre. Feita com materiais de alta qualidade, essa caneca mantém a temperatura da bebida por mais tempo. Leve sua caneca nômade para onde quiser e aproveite sua bebida preferida a qualquer momento.",
@@ -167,37 +138,6 @@
       ],
       "color": [
         "Cor única"
-      ],
-      "details": {
-        "origin": "Projetado por Z store, Inc",
-        "material": "Poliéster",
-        "dimensions": "6,25\" x 3,55\" x 1,15\"",
-        "finish": "Algodão colhido à mão e finalizado com óleos naturais.",
-        "includes": "Adesivos da Z store.",
-        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
-      }
-    },
-    {
-      "id": "1b9ddd99-4ab8-4f7e-bS87e-9a7721cf2dbf",
-      "name": "Moletom de Inverno",
-      "description": "Mergulhe no aconchego e no estilo com o Moletom de Inverno. Confeccionado em algodão premium, oferece conforto e visual único com sua estampa e lavagem especial.",
-      "price": 190,
-      "imageSrc": [
-        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_1080x.jpg?v=1710342926",
-        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-1-1_1080x.jpg?v=1710424034",
-        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-1_1080x.jpg?v=1710424034",
-        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-2_1080x.jpg?v=1710424034",
-        "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-2-1_1080x.jpg?v=1710424032"
-      ],
-      "size": [
-        "P",
-        "M",
-        "G",
-        "GG",
-        "XG"
-      ],
-      "color": [
-        "Preto"
       ],
       "details": {
         "origin": "Projetado por Z store, Inc",

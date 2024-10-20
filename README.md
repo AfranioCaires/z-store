@@ -2,8 +2,6 @@
 
 Z Store is a modern e-commerce web application built with React, TypeScript, and Vite. It offers a seamless shopping experience with features like product browsing, cart management, and secure checkout.
 
-
-
 ![](public/preview-product.png)
 ![](public/preview-product-home.png)
 ![](public/preview-cart.png)
