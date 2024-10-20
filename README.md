@@ -1,30 +1,85 @@
-# React + TypeScript + Vite
+# Z Store - E-commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Z Store is a modern e-commerce web application built with React, TypeScript, and Vite. It offers a seamless shopping experience with features like product browsing, cart management, and secure checkout.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+![](public/preview-product.png)
+![](public/preview-product-home.png)
+![](public/preview-cart.png)
+![](public/preview-checkout.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- Product catalog with detailed product pages
+- Shopping cart functionality
+- User authentication (sign up, sign in, sign out)
+- Responsive design for various screen sizes
+- Dark mode support
+- Checkout process
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Technologies Used
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Radix UI
+- React Router
+- Formik & Yup for form handling and validation
+- Axios for API requests
+- JSON Server for mock backend
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Start the mock backend server:
+   ```bash
+   npm run server
+   ```
+
+## Project Structure
+
+- `/src`: Main source code directory
+  - `/components`: Reusable React components
+  - `/hooks`: Custom React hooks
+  - `/interfaces`: TypeScript interfaces
+  - `/lib`: Utility functions
+  - `/network`: API client setup
+  - `/pages`: Main page components
+  - `/routes`: Route definitions
+
+## Key Components
+
+- Header: Contains navigation and cart elements
+- Product Card: Displays individual product information
+- Cart: Manages the shopping cart functionality
+- Checkout Page: Handles the checkout process
+
+## Authentication
+
+The project uses a custom authentication system with context API.
+
+## API Integration
+
+API requests are made using Axios.
+
+## Styling
+
+The project uses Tailwind CSS for styling, with custom theme configuration.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).

@@ -11,23 +11,41 @@
       "zipcode": "12345667",
       "neighborhood": "bairro sim",
       "name": "Teste dos santos"
+    },
+    {
+      "id": "abdd",
+      "email": "mathsales146@gmail.com",
+      "password": "asdasd42323234",
+      "birthDate": "08/02/2001",
+      "street": "asassdasadasd",
+      "number": "1111",
+      "country": "Brasil",
+      "zipcode": "23223232",
+      "neighborhood": "sdaasdasdasd",
+      "name": "Formação Front-end"
     }
   ],
   "products": [
     {
       "id": "e3e9cc22-839e-4774-92b2-90b3275e061",
-      "name": "Camiseta Básica",
+      "name": "Bolsa Básica",
       "description": "Uma camiseta confortável e estilosa para todas as ocasiões. Feita com tecido de algodão de alta qualidade, essa camiseta proporciona conforto durante o uso. Com um design moderno e versátil, ela pode ser combinada com diferentes peças de roupa para criar diversos looks. Adicione essa camiseta de algodão ao seu guarda-roupa e esteja sempre pronto para arrasar.",
       "price": 30,
       "imageSrc": [
-        "https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
-        "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-        "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
-        "https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
-        "https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-02.jpg"
+        "https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-01.jpg",
+        "https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-01.jpg",
+        "https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-01.jpg",
+        "https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-01.jpg",
+        "https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-01.jpg"
       ],
-      "size": ["Tamanho único"],
-      "color": ["Preto", "Branco", "Cinza"],
+      "size": [
+        "Tamanho único"
+      ],
+      "color": [
+        "Preto",
+        "Branco",
+        "Cinza"
+      ],
       "details": {
         "origin": "Projetado por Z store, Inc",
         "material": "100% algodão",
@@ -43,60 +61,20 @@
       "description": "A bolsa de cintura retrô é perfeita para quem busca estilo e praticidade. Com design vintage e diversos compartimentos, ela é ideal para carregar seus pertences de forma organizada. Feita com materiais de alta qualidade, essa bolsa é resistente e durável. Adicione um toque retrô ao seu visual com essa incrível bolsa.",
       "price": 90,
       "imageSrc": [
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
+        "https://tailwindui.com/plus/img/ecommerce-images/checkout-page-04-product-02.jpg",
         "https://cdn-images.farfetch-contents.com/20/06/58/05/20065805_50321624_1000.jpg",
         "https://cdn-images.farfetch-contents.com/20/06/63/52/20066352_50325332_1000.jpg",
         "https://cdn-images.farfetch-contents.com/20/06/63/52/20066352_50325326_1000.jpg",
         "https://cdn-images.farfetch-contents.com/19/36/98/92/19369892_43243905_1000.jpg"
       ],
-      "size": ["Tamanho único"],
-      "color": ["Salmão", "Rosé", "Azul"],
-      "details": {
-        "origin": "Projetado por Z store, Inc",
-        "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
-        "dimensions": "6,25\" x 3,55\" x 1,15\"",
-        "finish": "Lixado à mão e finalizado com óleo natural",
-        "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
-        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
-      }
-    },
-    {
-      "id": "bcb74cd1-f214-48ef-ad16-f60da3218f11",
-      "name": "Bolsa Média",
-      "description": "A bolsa média é prática e versátil, perfeita para o dia a dia. Com um design moderno e espaçoso, ela permite que você carregue todos os seus itens essenciais com conforto e estilo. Feita com materiais de alta qualidade, essa bolsa é resistente e durável. Adicione um toque de elegância ao seu visual com essa incrível bolsa.",
-      "price": 32,
-      "imageSrc": [
-        "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_7.jpg",
-        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_6.jpg",
-        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_5.jpg",
-        "https://www.qwstion.com/media/catalog/product/cache/3accdf260514ec296a677ba1a737c5bd/L/M/LMEBBDV2_8.jpg"
+      "size": [
+        "Tamanho único"
       ],
-      "size": ["P", "M"],
-      "color": ["Cor única"],
-      "details": {
-        "origin": "Projetado por Z store, Inc",
-        "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
-        "dimensions": "6,25\" x 3,55\" x 1,15\"",
-        "finish": "Lixado à mão e finalizado com óleo natural",
-        "includes": "Bandeja de cartão de madeira e 3 pacotes de recarga",
-        "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
-      }
-    },
-    {
-      "id": "a3e9cc21-839e-4774-92b2-90b32d75e064",
-      "name": "Garrafa de Barro",
-      "description": "A garrafa de barro é perfeita para quem busca uma opção sustentável e estilosa para transportar líquidos. Feita com argila natural, essa garrafa mantém a temperatura da bebida por mais tempo e ainda preserva o sabor original. Com um design único e artesanal, essa garrafa é uma ótima escolha para quem valoriza a natureza e o estilo.",
-      "price": 48,
-      "imageSrc": [
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-        "https://cdn.boobam.com.br/imgs/cb92f894-c699-6f41-46c9-9e7b071e3b9b_img_md.jpg?v=1671483287",
-        "https://cdn.boobam.com.br/imgs/dcdbd63e-8804-55da-dbeb-a9e0684e5b0b_img_md.jpg?v=1671483287",
-        "https://cdn.boobam.com.br/imgs/be853c76-7961-438f-077e-f3f5064bf3ef_img_md.jpg?v=1670870868",
-        "https://cdn.boobam.com.br/imgs/5d43b888-1e6b-f5cd-3d79-86ad7320e2bf_img_md.jpg?v=1670870867"
+      "color": [
+        "Salmão",
+        "Rosé",
+        "Azul"
       ],
-      "size": ["Tamanho único"],
-      "color": ["Cor única"],
       "details": {
         "origin": "Projetado por Z store, Inc",
         "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
@@ -112,14 +90,20 @@
       "description": "A caneca nômade é perfeita para quem gosta de tomar sua bebida favorita em qualquer lugar. Com um design prático e resistente, ela é ideal para viagens, acampamentos e passeios ao ar livre. Feita com materiais de alta qualidade, essa caneca mantém a temperatura da bebida por mais tempo. Leve sua caneca nômade para onde quiser e aproveite sua bebida preferida a qualquer momento.",
       "price": 35,
       "imageSrc": [
-        "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg",
+        "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-350ml-coyote-flask-1_grande.jpg?v=1682000278",
         "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-350ml-coyote-flask-1_grande.jpg?v=1682000278",
         "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-350ml-coyote-flask-5_grande.jpg?v=1682000278",
         "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-flask-khaki-350ml-4_3cb78c58-8748-44ab-9ee6-621a37359d36_grande.jpg?v=1619179929",
         "https://zenminded.uk/cdn/shop/products/kinto-travel-tumbler-flask-khaki-350ml-3_e28f5c59-46da-4ada-97f0-6772ccd742ae_grande.jpg?v=1619179929"
       ],
-      "size": ["Tamanho único"],
-      "color": ["Branco", "Verde oliva", "Cinza"],
+      "size": [
+        "Tamanho único"
+      ],
+      "color": [
+        "Branco",
+        "Verde oliva",
+        "Cinza"
+      ],
       "details": {
         "origin": "Projetado por Z store, Inc",
         "material": "Base de nogueira maciça com ímãs de terras raras e capa de aço revestido a pó",
@@ -141,8 +125,17 @@
         "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-WAFFLE-BUTTON-FRONT-SHIRT---RASPBERRY_SS24_GOODHOOD_-1_1080x.jpg?v=1711043713",
         "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-WAFFLE-BUTTON-FRONT-SHIRT---RASPBERRY_SS24_GOODHOOD_-1-1_1080x.jpg?v=1711043713"
       ],
-      "size": ["P", "M", "G", "GG", "XG", "XXG"],
-      "color": ["Rosa"],
+      "size": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XG",
+        "XXG"
+      ],
+      "color": [
+        "Rosa"
+      ],
       "details": {
         "origin": "Projetado por Z store, Inc",
         "material": "100% algodão",
@@ -164,8 +157,17 @@
         "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-X-EQUIPMENT-CINCHED-CHALK-BAG---BONE_SS24_GOODHOOD_-3_1080x.jpg?v=1711043519",
         "https://goodhoodstore.com/cdn/shop/files/BRAIN-DEAD-X-EQUIPMENT-CINCHED-CHALK-BAG---BONE_SS24_GOODHOOD_-4_1080x.jpg?v=1711043519"
       ],
-      "size": ["P", "M", "G", "GG", "XG", "XXG"],
-      "color": ["Cor única"],
+      "size": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XG",
+        "XXG"
+      ],
+      "color": [
+        "Cor única"
+      ],
       "details": {
         "origin": "Projetado por Z store, Inc",
         "material": "Poliéster",
@@ -175,7 +177,6 @@
         "considerations": "Feito de materiais naturais. O grão e a cor variam em cada item."
       }
     },
-
     {
       "id": "1b9ddd99-4ab8-4f7e-bS87e-9a7721cf2dbf",
       "name": "Moletom de Inverno",
@@ -188,8 +189,16 @@
         "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-2_1080x.jpg?v=1710424034",
         "https://goodhoodstore.com/cdn/shop/files/C.E-CAV-EMPT-WASHED-DIMENSIONS-CREW-NECK---BLACK_SS24_GOODHOOD_-2-1_1080x.jpg?v=1710424032"
       ],
-      "size": ["P", "M", "G", "GG", "XG"],
-      "color": ["Preto"],
+      "size": [
+        "P",
+        "M",
+        "G",
+        "GG",
+        "XG"
+      ],
+      "color": [
+        "Preto"
+      ],
       "details": {
         "origin": "Projetado por Z store, Inc",
         "material": "Poliéster",

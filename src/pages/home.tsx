@@ -1,9 +1,31 @@
+import { useEffect, useState } from "react"; 
 import { client } from "@/network/api";
 import ProductCard from "@/components/product-card";
 import { Product } from "@/interfaces/product";
 
-const { data } = await client.get<Product[]>("products");
 export function Home() {
+  const [data, setData] = useState<Product[]>([]); 
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState<string | null>(null); 
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await client.get<Product[]>("products");
+        setData(response.data); 
+      } catch (err) {
+        setError("Erro ao buscar produtos."); 
+      } finally {
+        setLoading(false); 
+      }
+    };
+
+    fetchProducts(); 
+  }, []);
+
+  if (loading) return <div>Loading...</div>; 
+  if (error) return <div>{error}</div>; 
+
   return (
     <>
       <main className="mx-auto container px-4 sm:px-6 lg:px-8">
